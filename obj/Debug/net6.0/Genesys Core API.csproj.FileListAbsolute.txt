@@ -1,0 +1,27 @@
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\appsettings.json
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Genesys Core API.exe
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Genesys Core API.deps.json
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Genesys Core API.runtimeconfig.json
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Genesys Core API.dll
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Genesys Core API.pdb
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\john0\source\repos\Genesys Core API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.csproj.AssemblyReference.cache
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.AssemblyInfoInputs.cache
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.AssemblyInfo.cs
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.csproj.CoreCompileInputs.cache
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\scopedcss\bundle\Genesys Core API.styles.css
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.csproj.CopyComplete
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.dll
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\refint\Genesys Core API.dll
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.pdb
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\Genesys Core API.genruntimeconfig.cache
+C:\Users\john0\source\repos\Genesys Core API\obj\Debug\net6.0\ref\Genesys Core API.dll
