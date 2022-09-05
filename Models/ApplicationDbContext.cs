@@ -8,7 +8,8 @@ namespace Genesys_Core_API.Models
         {
 
         }
-
-        public DbSet<Users> Users { get; set; }
+           
+        
+        public virtual DbSet<User> Users { get; set; }
     }
 }

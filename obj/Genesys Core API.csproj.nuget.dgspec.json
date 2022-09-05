@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\john0\\source\\repos\\Genesys Core API\\Genesys Core API.csproj": {}
+    "C:\\Users\\john0\\Genesys-Core-Api\\Genesys Core API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\john0\\source\\repos\\Genesys Core API\\Genesys Core API.csproj": {
+    "C:\\Users\\john0\\Genesys-Core-Api\\Genesys Core API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\john0\\source\\repos\\Genesys Core API\\Genesys Core API.csproj",
+        "projectUniqueName": "C:\\Users\\john0\\Genesys-Core-Api\\Genesys Core API.csproj",
         "projectName": "Genesys Core API",
-        "projectPath": "C:\\Users\\john0\\source\\repos\\Genesys Core API\\Genesys Core API.csproj",
+        "projectPath": "C:\\Users\\john0\\Genesys-Core-Api\\Genesys Core API.csproj",
         "packagesPath": "C:\\Users\\john0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\john0\\source\\repos\\Genesys Core API\\obj\\",
+        "outputPath": "C:\\Users\\john0\\Genesys-Core-Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\john0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,10 +40,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.8, )"
@@ -89,6 +85,10 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.22.1, )"
+            },
+            "jose-jwt": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             }
           },
           "imports": [
@@ -97,7 +97,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -109,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
