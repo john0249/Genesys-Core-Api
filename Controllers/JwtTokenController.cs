@@ -26,9 +26,9 @@ namespace Genesys_Core_API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(User user)
         {
-            if(user != null && user.UserName != null && user.Password != null)
+            if(!user.UserName.IsNullOrEmpty() && !user.Password.IsNullOrEmpty())
             {
-                var userData = await GetUsers(user.UserName, user.Password);
+              
                 var jwt = _configuration.GetSection("Jwt").Get<Jwt>();
 
                 if(user != null)
@@ -54,12 +54,12 @@ namespace Genesys_Core_API.Controllers
                     return Ok(new JwtSecurityTokenHandler().WriteToken(token));
                 }else
                 {
-                    return Unauthorized(); 
+                    return BadRequest("El usuario no existe"); 
                 }
 
             }else
             {
-                return Unauthorized();
+                return BadRequest("El usuario no existe");
             }
         }
 
