@@ -26,7 +26,7 @@ namespace Genesys_Core_API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(User user)
         {
-            if(!user.UserName.IsNullOrEmpty() && !user.Password.IsNullOrEmpty())
+            if(user.UserName != "" && user.Password != "")
             {
               
                 var jwt = _configuration.GetSection("Jwt").Get<Jwt>();
