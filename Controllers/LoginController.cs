@@ -1,4 +1,4 @@
-﻿using Genesys_Core_API.AuthTest.Manager;
+﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Genesys_Core_API.Models;
@@ -10,15 +10,15 @@ namespace Genesys_Core_API.Controllers
     [Route("api/[controller]/[action]")]
     public class LoginController : ControllerBase
     {
-        private readonly JwtAuthenticationManager jwtAuthenticationManager;
-       public LoginController (JwtAuthenticationManager _jwtAuthenticationManager)
+        
+   /*    public LoginController ()
         {
-            this.jwtAuthenticationManager = _jwtAuthenticationManager;
+            
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Authorize([FromBody] Users user)
+        public IActionResult Authorize([FromBody] User user)
         {
             string? token = jwtAuthenticationManager.Authenticate(username: user.UserName, password: user.Password);
             if (string.IsNullOrEmpty(token))
@@ -32,6 +32,6 @@ namespace Genesys_Core_API.Controllers
         public IActionResult Route()
         {
             return Ok("Authorized");
-        }
+        }*/
     }
 }
