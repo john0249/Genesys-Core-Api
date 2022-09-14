@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
-
+using Genesys_Core_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,11 +66,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateLifetime = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:key"]))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]))
 
         });
 
-
+//services
+builder.Services.AddScoped<LoginService>();
 
 
 var app = builder.Build();
@@ -92,11 +93,11 @@ using (var scope = app.Services.CreateScope())
 
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors(gcCors);
 
 app.MapControllers();
 
 app.Run();
-app.UseAuthentication();
+

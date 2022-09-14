@@ -2,6 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Genesys_Core_API.Models;
+using Genesys_Core_API.Services;
+using Genesys_Core_API.DTO.UserDto;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace Genesys_Core_API.Controllers
 {
@@ -10,28 +16,49 @@ namespace Genesys_Core_API.Controllers
     [Route("api/[controller]/[action]")]
     public class LoginController : ControllerBase
     {
-        
-   /*    public LoginController ()
-        {
-            
-        }
+        private readonly LoginService _loginService;
+        private IConfiguration _config;
+      public LoginController (LoginService loginService, IConfiguration config)
+      {
+            _loginService = loginService;
+            _config = config;
+      }
 
-        [HttpPost]
+        [HttpPost("authenticate")]
         [AllowAnonymous]
-        public IActionResult Authorize([FromBody] User user)
+        public async Task<IActionResult> Authorize(UserDto user)
         {
-            string? token = jwtAuthenticationManager.Authenticate(username: user.UserName, password: user.Password);
-            if (string.IsNullOrEmpty(token))
+            var usr = await _loginService.GetUser(user);
+            if (usr == null)
             {
-                return Unauthorized();
+                return BadRequest(new { message = "Credenciales inválidas." });
             }
-            return Ok(token);
+            string jwtToken = GenerateToken(usr);
+            return Ok(new {token = jwtToken});
         }
 
-        [HttpGet]
-        public IActionResult Route()
+        private string GenerateToken(User user)
         {
-            return Ok("Authorized");
-        }*/
+            var claims = new[]
+            {
+
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                new Claim("Id", user.Id.ToString()),
+                new Claim("Username", user.UserName),
+                new Claim("Password", user.Password)
+            };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("Jwt:Key").Value));
+            var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
+            var securityToken = new JwtSecurityToken(
+                    claims: claims,
+                    expires: DateTime.Now.AddMinutes(30),
+                    signingCredentials: signIn
+                );
+
+            string token = new JwtSecurityTokenHandler().WriteToken(securityToken);
+            return token;
+        }
+
     }
 }
